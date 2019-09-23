@@ -1,26 +1,32 @@
 <?php
 
-class Task{
+class Person{
 public $desc;
-public $completed=false;
+
 
 public function __construct($desc){
 
         $this->desc = $desc;
 }
 
-public function complete(){
 
-        $this->completed = true;
+
+public function setAge($age){
+        if ($age < 15){
+                throw new Exception("person under age");
+        }
+
+        $this->age = $age;
 }
 
 
 }
 
-$task = new Task('I am loved');
+$john = new  Person('Hohn Doe');
 
-$task->complete();
 
-var_dump($task->desc);
+$john->setAge(14);
+
+var_dump($john);
 
 ?>
